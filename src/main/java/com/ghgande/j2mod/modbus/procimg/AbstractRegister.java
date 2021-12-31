@@ -69,9 +69,10 @@ public abstract class AbstractRegister implements Register {
     }
 
     @Override
-    public void setValue(int v) {
+    public Register setValue(int v) {
         register[0] = (byte)(0xff & (v >> 8));
         register[1] = (byte)(0xff & v);
+        return null;
     }
 
 }

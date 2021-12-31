@@ -23,8 +23,8 @@ import com.ghgande.j2mod.modbus.io.ModbusRTUTransport;
 import com.ghgande.j2mod.modbus.io.ModbusSerialTransport;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
 import com.ghgande.j2mod.modbus.util.SerialParameters;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,7 +42,7 @@ import java.util.TreeSet;
  */
 public class SerialConnection extends AbstractSerialConnection {
 
-    private static final Logger logger = LoggerFactory.getLogger(SerialConnection.class);
+    private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     public static final int CONNECT_RETRY_DELAY = 100;
     public static final int CONNECT_RETRIES = 3;
 

@@ -37,4 +37,15 @@ public interface DigitalOut extends DigitalIn {
      * @param b true if to be set, false otherwise.
      */
     void set(boolean b);
+
+    /**
+     * Sets a group of parameters (address, function, dataType) for this register useful for Observable function.
+     *
+     * @param observableDataBean, modbus address as <tt>ObservableDataBean</tt>.
+     */
+    void setObservableDataBean(ObservableDataBean observableDataBean);
+
+
+    ObservableDataBean observableDataBean();
+
 }

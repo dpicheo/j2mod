@@ -15,8 +15,9 @@
  */
 package com.ghgande.j2mod.modbus.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class that implements a collection for
@@ -30,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BitVector {
 
-    private static final Logger logger = LoggerFactory.getLogger(BitVector.class);
+    private static final Logger logger = LogManager.getLogger(BitVector.class);
     private static final int[] ODD_OFFSETS = {-1, -3, -5, -7};
     private static final int[] STRAIGHT_OFFSETS = {7, 5, 3, 1};
     //instance attributes

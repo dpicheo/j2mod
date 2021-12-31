@@ -15,8 +15,9 @@
  */
 package com.ghgande.j2mod.modbus.io;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +33,7 @@ import java.io.InputStream;
  */
 public class FastByteArrayInputStream extends InputStream {
 
-    private static final Logger logger = LoggerFactory.getLogger(FastByteArrayInputStream.class);
+    private static final Logger logger = LogManager.getLogger(FastByteArrayInputStream.class);
 
     /**
      * Number of bytes in the input buffer.

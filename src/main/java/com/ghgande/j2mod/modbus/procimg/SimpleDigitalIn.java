@@ -42,6 +42,7 @@ public class SimpleDigitalIn implements DigitalIn {
      * @param b true if to be set, false otherwise.
      */
     public SimpleDigitalIn(boolean b) {
+
         set(b);
     }
 
@@ -49,6 +50,7 @@ public class SimpleDigitalIn implements DigitalIn {
     public boolean isSet() {
         return set;
     }
+
 
     /**
      * Sets the state of this <tt>SimpleDigitalIn</tt>.

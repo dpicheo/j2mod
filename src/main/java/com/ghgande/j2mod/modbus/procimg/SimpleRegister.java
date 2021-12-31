@@ -67,4 +67,9 @@ public class SimpleRegister extends SynchronizedAbstractRegister implements
 
         return getValue() + "";
     }
+
+    @Override
+    public ObservableDataBean observableDataBean() {
+        return null;
+    }
 }

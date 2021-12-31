@@ -20,8 +20,8 @@ import com.ghgande.j2mod.modbus.io.AbstractModbusTransport;
 import com.ghgande.j2mod.modbus.io.ModbusRTUTCPTransport;
 import com.ghgande.j2mod.modbus.io.ModbusTCPTransport;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -38,7 +38,7 @@ import java.net.Socket;
  */
 public class TCPMasterConnection {
 
-    private static final Logger logger = LoggerFactory.getLogger(TCPMasterConnection.class);
+    private static final Logger logger = LogManager.getLogger(TCPMasterConnection.class);
 
     // instance attributes
     private Socket socket;

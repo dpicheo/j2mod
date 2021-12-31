@@ -24,8 +24,8 @@ import com.ghgande.j2mod.modbus.msg.ModbusRequest;
 import com.ghgande.j2mod.modbus.net.AbstractUDPTerminal;
 import com.ghgande.j2mod.modbus.net.UDPMasterConnection;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class implementing the <tt>ModbusTransaction</tt>
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ModbusUDPTransaction extends ModbusTransaction {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusUDPTransaction.class);
+    private static final Logger logger = LogManager.getLogger(ModbusUDPTransaction.class);
 
     //instance attributes and associations
     private AbstractUDPTerminal terminal;

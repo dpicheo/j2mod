@@ -24,8 +24,8 @@ import com.ghgande.j2mod.modbus.msg.ModbusResponse;
 import com.ghgande.j2mod.modbus.net.AbstractModbusListener;
 import com.ghgande.j2mod.modbus.net.AbstractSerialConnection;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -43,7 +43,7 @@ import java.util.Set;
  */
 public abstract class ModbusSerialTransport extends AbstractModbusTransport {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusSerialTransport.class);
+    private static final Logger logger = LogManager.getLogger(ModbusSerialTransport.class);
 
     /**
      * Defines a virtual number for the FRAME START token (COLON).

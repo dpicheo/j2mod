@@ -22,8 +22,8 @@ import com.ghgande.j2mod.modbus.msg.ModbusRequest;
 import com.ghgande.j2mod.modbus.msg.ModbusResponse;
 import com.ghgande.j2mod.modbus.net.AbstractModbusListener;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
@@ -38,7 +38,7 @@ import java.io.IOException;
  */
 public class ModbusASCIITransport extends ModbusSerialTransport {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusASCIITransport.class);
+    private static final Logger logger = LogManager.getLogger(ModbusASCIITransport.class);
     private static final String I_O_EXCEPTION_SERIAL_PORT_TIMEOUT = "I/O exception - Serial port timeout";
     private final byte[] inBuffer = new byte[Modbus.MAX_MESSAGE_LENGTH];
     private final BytesInputStream byteInputStream = new BytesInputStream(inBuffer);         //to read message from

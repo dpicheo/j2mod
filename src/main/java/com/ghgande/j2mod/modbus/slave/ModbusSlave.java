@@ -23,8 +23,8 @@ import com.ghgande.j2mod.modbus.net.ModbusUDPListener;
 import com.ghgande.j2mod.modbus.procimg.ProcessImage;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
 import com.ghgande.j2mod.modbus.util.SerialParameters;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.InetAddress;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ import java.util.Map;
  */
 public class ModbusSlave {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusSlave.class);
+    private static final Logger logger = LogManager.getLogger(ModbusSlave.class);
 
     private final ModbusSlaveType type;
     private final int port;

@@ -18,8 +18,8 @@ package com.ghgande.j2mod.modbus.util;
 import com.ghgande.j2mod.modbus.Modbus;
 import com.ghgande.j2mod.modbus.io.BytesOutputStream;
 import com.ghgande.j2mod.modbus.msg.ModbusMessage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
@@ -34,7 +34,7 @@ import java.util.List;
  */
 public class ModbusUtil {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusUtil.class);
+    private static final Logger logger = LogManager.getLogger(ModbusUtil.class);
 
     /* Table of CRC values for high-order byte */
     private static final short[] auchCRCHi = {

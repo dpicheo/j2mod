@@ -17,8 +17,8 @@ package com.ghgande.j2mod.modbus.net;
 
 import com.ghgande.j2mod.modbus.ModbusIOException;
 import com.ghgande.j2mod.modbus.io.AbstractModbusTransport;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class TCPConnectionHandler implements Runnable {
 
-    private static final Logger logger = LoggerFactory.getLogger(TCPConnectionHandler.class);
+    private static final Logger logger = LogManager.getLogger(TCPConnectionHandler.class);
     private static final long watchDogResolution = 5000L; // Check connection status every 5 seconds
     private static final long nanosPerSecond = 1000L * 1000L * 1000L;
 

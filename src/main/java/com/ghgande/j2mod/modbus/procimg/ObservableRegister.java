@@ -26,7 +26,8 @@ import com.ghgande.j2mod.modbus.util.Observable;
  */
 public class ObservableRegister extends Observable implements Register {
 
-    private static final String VALUE = "value";
+    //private static final String VALUE = "value";
+    protected ObservableDataBean observableDataBean=new ObservableDataBean();
 
     /**
      * The word holding the content of this register.
@@ -56,7 +57,8 @@ public class ObservableRegister extends Observable implements Register {
     @Override
     public synchronized void setValue(short s) {
         register = s;
-        notifyObservers(VALUE);
+        observableDataBean.setValue(""+register);
+        notifyObservers(observableDataBean);
     }
 
     @Override
@@ -66,13 +68,31 @@ public class ObservableRegister extends Observable implements Register {
         }
         else {
             register = (short)(((short)(bytes[0] << 8)) | (((short)(bytes[1])) & 0xFF));
-            notifyObservers(VALUE);
+            //notifyObservers(VALUE);
+            observableDataBean.setValue(""+register);
+            notifyObservers(observableDataBean);
         }
     }
 
+
+
     @Override
-    public synchronized void setValue(int v) {
+    public void setObservableDataBean(ObservableDataBean observableDataBean) {
+        this.observableDataBean=observableDataBean;
+    }
+
+    @Override
+    public ObservableDataBean observableDataBean() {
+        return observableDataBean;
+    }
+
+
+    @Override
+    public synchronized Register setValue(int v) {
         register = (short)v;
-        notifyObservers(VALUE);
+        observableDataBean.setValue(""+register);
+        notifyObservers(observableDataBean);
+
+        return null;
     }
 }

@@ -16,8 +16,8 @@
 package com.ghgande.j2mod.modbus.msg;
 
 import com.ghgande.j2mod.modbus.Modbus;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -36,7 +36,7 @@ import static com.ghgande.j2mod.modbus.msg.ModbusResponse.AuxiliaryMessageTypes.
  */
 public abstract class ModbusResponse extends ModbusMessageImpl {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusResponse.class);
+    private static final Logger logger = LogManager.getLogger(ModbusResponse.class);
 
     public enum AuxiliaryMessageTypes {
         NONE, UNIT_ID_MISSMATCH

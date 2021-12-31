@@ -31,6 +31,9 @@ public class ObservableDigitalOut extends Observable implements DigitalOut {
      */
     protected boolean set;
 
+    protected ObservableDataBean observableDataBean=new ObservableDataBean();
+
+
     /**
      * Determine if the digital output is set.
      *
@@ -48,6 +51,17 @@ public class ObservableDigitalOut extends Observable implements DigitalOut {
     @Override
     public void set(boolean b) {
         set = b;
-        notifyObservers("value");
+        observableDataBean.setValue(""+b);
+        notifyObservers(observableDataBean);
+    }
+
+    @Override
+    public void setObservableDataBean(ObservableDataBean observableDataBean) {
+        this.observableDataBean=observableDataBean;
+    }
+
+    @Override
+    public ObservableDataBean observableDataBean() {
+        return observableDataBean;
     }
 }

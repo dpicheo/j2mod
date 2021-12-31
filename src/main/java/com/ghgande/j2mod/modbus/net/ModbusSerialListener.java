@@ -19,8 +19,8 @@ import com.ghgande.j2mod.modbus.ModbusIOException;
 import com.ghgande.j2mod.modbus.io.AbstractModbusTransport;
 import com.ghgande.j2mod.modbus.io.ModbusSerialTransport;
 import com.ghgande.j2mod.modbus.util.SerialParameters;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class that implements a ModbusSerialListener.<br>
@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ModbusSerialListener extends AbstractModbusListener {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusSerialListener.class);
+    private static final Logger logger = LogManager.getLogger(ModbusSerialListener.class);
     private final AbstractSerialConnection serialCon;
 
     /**

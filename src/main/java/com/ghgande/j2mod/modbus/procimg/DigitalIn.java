@@ -36,4 +36,5 @@ public interface DigitalIn {
      */
     boolean isSet();
 
+
 }

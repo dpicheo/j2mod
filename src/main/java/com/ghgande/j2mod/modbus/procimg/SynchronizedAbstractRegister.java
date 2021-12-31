@@ -24,6 +24,8 @@ package com.ghgande.j2mod.modbus.procimg;
  */
 public abstract class SynchronizedAbstractRegister implements Register {
 
+    protected ObservableDataBean observableDataBean;
+
     /**
      * The word (<tt>byte[2]</tt>) holding the state of this register.
      *
@@ -88,13 +90,22 @@ public abstract class SynchronizedAbstractRegister implements Register {
     }
 
     @Override
-    public synchronized void setValue(int v) {
+    public synchronized Register setValue(int v) {
         if (register == null) {
             throw new IllegalAddressException();
         }
 
         register[0] = (byte)(0xff & (v >> 8));
         register[1] = (byte)(0xff & v);
+        return null;
     }
 
+    public ObservableDataBean getObservableDataBean() {
+        return observableDataBean;
+    }
+
+    @Override
+    public void setObservableDataBean(ObservableDataBean observableDataBean) {
+        this.observableDataBean = observableDataBean;
+    }
 }

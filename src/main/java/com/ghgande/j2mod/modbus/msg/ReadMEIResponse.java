@@ -16,8 +16,8 @@
 package com.ghgande.j2mod.modbus.msg;
 
 import com.ghgande.j2mod.modbus.Modbus;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -34,7 +34,7 @@ import java.io.IOException;
  */
 public class ReadMEIResponse extends ModbusResponse {
 
-    private static final Logger logger = LoggerFactory.getLogger(ReadMEIResponse.class);
+    private static final Logger logger = LogManager.getLogger(ReadMEIResponse.class);
 
     //instance attributes
     private int fieldLevel = 0;

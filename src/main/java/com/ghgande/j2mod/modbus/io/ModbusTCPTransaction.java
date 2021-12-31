@@ -23,8 +23,8 @@ import com.ghgande.j2mod.modbus.msg.ExceptionResponse;
 import com.ghgande.j2mod.modbus.msg.ModbusRequest;
 import com.ghgande.j2mod.modbus.net.TCPMasterConnection;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class implementing the <tt>ModbusTransaction</tt> interface.
@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ModbusTCPTransaction extends ModbusTransaction {
 
-    private static final Logger logger = LoggerFactory.getLogger(ModbusTCPTransaction.class);
+    private static final Logger logger = LogManager.getLogger(ModbusTCPTransaction.class);
 
     // instance attributes and associations
     private TCPMasterConnection connection;

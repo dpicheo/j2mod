@@ -17,8 +17,8 @@ package com.ghgande.j2mod.modbus.net;
 
 import com.ghgande.j2mod.modbus.io.ModbusUDPTransport;
 import com.ghgande.j2mod.modbus.util.ModbusUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -35,7 +35,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 class UDPSlaveTerminal extends AbstractUDPTerminal {
 
-    private static final Logger logger = LoggerFactory.getLogger(UDPSlaveTerminal.class);
+    private static final Logger logger = LogManager.getLogger(UDPSlaveTerminal.class);
     protected Hashtable<Integer, DatagramPacket> requests = new Hashtable<Integer, DatagramPacket>(342);
     private final LinkedBlockingQueue<byte[]> sendQueue = new LinkedBlockingQueue<byte[]>();
     private final LinkedBlockingQueue<byte[]> receiveQueue = new LinkedBlockingQueue<byte[]>();

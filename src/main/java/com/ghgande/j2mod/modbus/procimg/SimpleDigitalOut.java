@@ -56,4 +56,14 @@ public class SimpleDigitalOut implements DigitalOut {
         set = b;
     }
 
+    @Override
+    public void setObservableDataBean(ObservableDataBean observableDataBean) {
+
+    }
+
+    @Override
+    public ObservableDataBean observableDataBean() {
+        return null;
+    }
+
 }

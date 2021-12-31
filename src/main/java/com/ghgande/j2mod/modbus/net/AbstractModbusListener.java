@@ -25,8 +25,8 @@ import com.ghgande.j2mod.modbus.msg.ModbusResponse.AuxiliaryMessageTypes;
 import com.ghgande.j2mod.modbus.procimg.ProcessImage;
 import com.ghgande.j2mod.modbus.slave.ModbusSlave;
 import com.ghgande.j2mod.modbus.slave.ModbusSlaveFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.InetAddress;
 
@@ -38,7 +38,7 @@ import java.net.InetAddress;
  */
 public abstract class AbstractModbusListener implements Runnable {
 
-    private static final Logger logger = LoggerFactory.getLogger(AbstractModbusListener.class);
+    private static final Logger logger = LogManager.getLogger(AbstractModbusListener.class);
     protected int port = Modbus.DEFAULT_PORT;
     protected boolean listening;
     protected InetAddress address;

@@ -33,8 +33,9 @@ public interface Register extends InputRegister {
      * value (unsigned short).
      *
      * @param v the value as unsigned short (<tt>int</tt>).
+     * @return
      */
-    void setValue(int v);
+    Register setValue(int v);
 
     /**
      * Sets the content of this register from the given signed 16-bit value
@@ -50,4 +51,15 @@ public interface Register extends InputRegister {
      * @param bytes the raw data as <tt>byte[]</tt>.
      */
     void setValue(byte[] bytes);
+
+    /**
+     * Sets a group of parameters (address, function, dataType) for this register useful for Observable function.
+     *
+     * @param observableDataBean, modbus address as <tt>ObservableDataBean</tt>.
+     */
+    void setObservableDataBean(ObservableDataBean observableDataBean);
+
+
+    ObservableDataBean observableDataBean();
+
 }
